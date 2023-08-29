@@ -1,0 +1,34 @@
+# import pandas library
+import pandas as pd
+
+# Get the data
+column_names = ['user_id', 'item_id', 'rating', 'timestamp']
+
+path = 'https://media.geeksforgeeks.org/wp-content/uploads/file.tsv'
+
+df = pd.read_csv(path, sep='\t', names=column_names)
+
+# Check the head of the data
+df.head()
+# Check out all the movies and their respective IDs
+movie_titles = pd.read_csv('https://media.geeksforgeeks.org/wp-content/uploads/Movie_Id_Titles.csv')
+movie_titles.head()
+data = pd.merge(df, movie_titles, on='item_id')
+print(data.head())
+# Calculate mean rating of all movies
+print(data.groupby('title')['rating'].mean().sort_values(ascending=False).head())
+# Calculate count rating of all movies
+print(data.groupby('title')['rating'].count().sort_values(ascending=False).head())
+
+import matplotlib.pyplot as plt
+
+# Calculate mean rating of all movies
+mean_ratings = data.groupby('title')['rating'].mean().sort_values(ascending=False).head()
+
+# Create a bar plot for mean ratings
+plt.figure(figsize=(10, 6))
+mean_ratings.plot(kind='bar')
+plt.title('Top Rated Movies (Mean Ratings)')
+plt.xlabel('Movie Title')
+plt.ylabel('Mean Rating')
+plt.show()
