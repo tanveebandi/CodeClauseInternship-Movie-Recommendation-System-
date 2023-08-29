@@ -1,0 +1,20 @@
+   user_id  item_id  rating  timestamp             title
+0        0       50       5  881250949  Star Wars (1977)
+1      290       50       5  880473582  Star Wars (1977)
+2       79       50       4  891271545  Star Wars (1977)
+3        2       50       5  888552084  Star Wars (1977)
+4        8       50       5  879362124  Star Wars (1977)
+title
+They Made Me a Criminal (1939)                5.0
+Marlene Dietrich: Shadow and Light (1996)     5.0
+Saint of Fort Washington, The (1993)          5.0
+Someone Else's America (1995)                 5.0
+Star Kid (1997)                               5.0
+Name: rating, dtype: float64
+title
+Star Wars (1977)             584
+Contact (1997)               509
+Fargo (1996)                 508
+Return of the Jedi (1983)    507
+Liar Liar (1997)             485
+Name: rating, dtype: int64
